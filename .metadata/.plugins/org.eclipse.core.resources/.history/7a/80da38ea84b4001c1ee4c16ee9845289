@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class DiceRolling {
+
+	
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		boolean flag = true;
+		int numOfSides;
+		int rollNumber = 1;
+		String rollAgain;
+		
+		while (flag == true) {
+			System.out.println("How many sides should each die have?");
+			numOfSides = input.nextInt();
+			
+			Random rand = new Random();
+			
+			System.out.println("Roll " + rollNumber + ":");
+			int num1 = rand.nextInt(numOfSides);
+			int num2 = rand.nextInt(numOfSides);
+			System.out.println(num1);
+			System.out.println(num2);
+
+			rollNumber++;
+			System.out.println("Roll again?(y/n): ");
+			rollAgain = input.next();
+			if (rollAgain.equalsIgnoreCase("n")) {
+				flag = false;
+			}
+		}
+		
+	}
+
+}
